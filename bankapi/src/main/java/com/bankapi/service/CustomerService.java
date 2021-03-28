@@ -20,7 +20,7 @@ public class CustomerService extends GenericService<Customer, RequestCustomerVO>
 		return this.get(id);
 	}
 
-	public List<Customer> finddAll() {
+	public List<Customer> findAll() {
 		return this.getAll();
 	}
 

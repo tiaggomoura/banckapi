@@ -30,7 +30,7 @@ public class CustomerController {
 	@GetMapping
 	public ResponseVO getAll() throws CvcBankApiException {
 		ResponseVO response = new ResponseVO();
-		response.setResponse(this.service.finddAll());
+		response.setResponse(this.service.findAll());
 		response.setHttpCode(HttpStatus.OK.value());
 		response.setMessage(HttpStatus.OK.name());
 		return response;

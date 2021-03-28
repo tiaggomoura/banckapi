@@ -18,9 +18,10 @@ import lombok.Setter;
 public class RequestAccountVO {
 
 	
-	@NotNull
+	@NotNull(message = "Customer Id is required.")
 	private Long customerId;
 	private String number;
+	
 	private String name;
 	private BigDecimal balance = BigDecimal.ZERO;
 

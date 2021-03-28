@@ -10,19 +10,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
+import javax.validation.constraints.NotEmpty;
 
 import com.bankapi.vo.RequestCustomerVO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Customer implements GenericEntity<Customer, RequestCustomerVO> {
@@ -32,6 +32,7 @@ public class Customer implements GenericEntity<Customer, RequestCustomerVO> {
 	@Column(name = "customer_id")
 	private Long id;
 
+	@NotEmpty(message = "Name is Required.")
 	private String name;
 	private String nationalID;
 	private String email;
