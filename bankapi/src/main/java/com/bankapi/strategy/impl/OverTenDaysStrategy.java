@@ -28,7 +28,7 @@ public class OverTenDaysStrategy implements TaxCalculator {
 			percentTax = new BigDecimal(0.06);
 		} else if (this.days <= 40) {
 			percentTax = new BigDecimal(0.04);
-		} else if (this.days > 40 && this.isGreater1000()) {
+		} else if (this.days > 40 && this.isGreater100000()) {
 			percentTax = new BigDecimal(0.02);
 		} else {
 			throw new CvcBankApiException("There is no fee for the scheduling period.", HttpStatus.NOT_ACCEPTABLE);
@@ -37,8 +37,8 @@ public class OverTenDaysStrategy implements TaxCalculator {
 		return percentTax.multiply(this.transferAmount);
 	}
 
-	private boolean isGreater1000() {
-		return this.transferAmount.compareTo(BigDecimal.valueOf(100000)) >= 0;
+	private boolean isGreater100000() {
+		return this.transferAmount.compareTo(BigDecimal.valueOf(100000)) > 0;
 	}
 
 }

@@ -1,9 +1,6 @@
 package com.bankapi.util;
 
-import static java.util.Optional.ofNullable;
-
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -25,8 +22,9 @@ public class DataUtils {
 	}
 
 	public static String getStringFromDate(String patternDate, LocalDate date) {
-		SimpleDateFormat sdf = new SimpleDateFormat(patternDate);
-		return ofNullable(date).map(sdf::format).orElse(null);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String formattedString = date.format(formatter);
+		return formattedString;
 	}
 
 	public static long diffDays(LocalDate date1, LocalDate date2) {
