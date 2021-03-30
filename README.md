@@ -1,5 +1,5 @@
 ## Resume
-* Projeto Spring Boot simulando API de agendamento de Transferências
+* Spring Boot project simulating Transfer Scheduling API
 
 ## Installation
 * Clone the project and import as a Maven project
