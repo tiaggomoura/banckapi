@@ -17,8 +17,8 @@
   * https://app-bankapi.herokuapp.com/bankapi/h2-console
 
 -------------------------------------------------------------
-  h2 user: sa
-  h2 pass: ""  
+  * h2 user: sa
+  * h2 pass: ""  
 ----------------------------------------------------------
 
 # USED PATTERNS
